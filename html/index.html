@@ -1,5 +1,6 @@
 {% extends "layout.html" %}
 {% block body %}
+<div class="card-deck">
  {% for entry in entries%}  
         <div class="card card-inverse card-warning mb-3 text-center" style="width: 20rem;">
             <div class="col-sm-6">
@@ -7,7 +8,7 @@
                 <h4 id="card-symbol" class="card-title"> {{ redis_data.hget(entry, 'Symbol') }} </h4>
                 <p id="card-body" class="card-text">
                     {% for key in keys %}
-                        <p>{{key}}:{{ redis_data.hget(entry, key) }}</p>
+                        {{key}}:{{ redis_data.hget(entry, key) }}
                     {% endfor %}
                 </p>
             </div>   
@@ -15,4 +16,5 @@
         </div>
 
  {% endfor %}
+</div>
 {% endblock %}

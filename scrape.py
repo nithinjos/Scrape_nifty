@@ -11,15 +11,14 @@ browser = webdriver.PhantomJS(PHANTOMJS_PATH)
 
 keys = [
     'LTP',
-    '% change',
-    'Traded Qty',
+    '%change',
+    'TradedQty',
     'Value(in Lakhs)',
     'Open',
     'High',
     'Low',
-    'Prev. close',
-    'Latest Ex Date',
-    'CA']
+    'Prev.close',
+    'LatestExDate']
 
 def nScrape():
     browser.get(url)
@@ -33,13 +32,13 @@ def nScrape():
         entry = 'entry ' + str(rows_g.index(row))
         redis_inst.hset(entry, 'Symbol', cols[0].get_text())
         redis_inst.hset(entry, 'LTP', cols[1].get_text())
-        redis_inst.hset(entry, '% change', cols[2].get_text())
-        redis_inst.hset(entry, 'Traded Qty', cols[3].get_text())
+        redis_inst.hset(entry, '%change', cols[2].get_text())
+        redis_inst.hset(entry, 'TradedQty', cols[3].get_text())
         redis_inst.hset(entry, 'Value(in Lakhs)', cols[4].get_text())
         redis_inst.hset(entry, 'Open', cols[5].get_text())
         redis_inst.hset(entry, 'High', cols[6].get_text())
         redis_inst.hset(entry, 'Low', cols[7].get_text())
-        redis_inst.hset(entry, 'Prev. close', cols[8].get_text())
+        redis_inst.hset(entry, 'Prev.close', cols[8].get_text())
         redis_inst.hset(entry, 'Latest Ex Date', cols[9].get_text())
         redis_inst.hset(entry, 'CA', cols[10].get_text())
     
