@@ -1,0 +1,5 @@
+Jinja2==2.9.6
+redis==2.10.5
+selenium==3.4.1
+CherryPy==10.2.1
+beautifulsoup4==4.6.0
