@@ -13,7 +13,7 @@ keys = [
     'LTP',
     '%change',
     'TradedQty',
-    'Value(in Lakhs)',
+    'Value(inLakhs)',
     'Open',
     'High',
     'Low',
@@ -34,19 +34,13 @@ def nScrape():
         redis_inst.hset(entry, 'LTP', cols[1].get_text())
         redis_inst.hset(entry, '%change', cols[2].get_text())
         redis_inst.hset(entry, 'TradedQty', cols[3].get_text())
-        redis_inst.hset(entry, 'Value(in Lakhs)', cols[4].get_text())
+        redis_inst.hset(entry, 'Value(inLakhs)', cols[4].get_text())
         redis_inst.hset(entry, 'Open', cols[5].get_text())
         redis_inst.hset(entry, 'High', cols[6].get_text())
         redis_inst.hset(entry, 'Low', cols[7].get_text())
         redis_inst.hset(entry, 'Prev.close', cols[8].get_text())
-        redis_inst.hset(entry, 'Latest Ex Date', cols[9].get_text())
+        redis_inst.hset(entry, 'LatestExDate', cols[9].get_text())
         redis_inst.hset(entry, 'CA', cols[10].get_text())
     
     
 
-
-# print(redis_inst.hget('entry 9', 'Symbol'))
-# nifty_g = pd.DataFrame( data)
-
-# nifty_g.to_csv("nif.csv")
-# nifty_g.to_html("1.html")
