@@ -17,8 +17,14 @@ class HomePage:
 
 root = HomePage()
 
-config_file = os.path.join(os.path.dirname(__file__), 'server.conf')
+config = {
+    'global': {
+        'server.socket_host': '0.0.0.0',
+        'server.socket_port': int(os.environ.get('PORT', 5000)),
+}
+}
+# config_file = os.path.join(os.path.dirname(__file__), 'server.conf')
 
 if __name__ == '__main__':
 
-    cherrypy.quickstart(root, config = config_file)
+    cherrypy.quickstart(root, config = config)
