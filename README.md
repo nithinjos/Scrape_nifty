@@ -8,8 +8,11 @@ http://nifty50.herokuapp.com
 To run app locally:
 
 > clone the github repo
+
 > cd to project directory
+
 > pip install -r requirements.txt
+
 > python sample_app.py
 
 App would be served at localhost:3000
