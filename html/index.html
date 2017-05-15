@@ -1,8 +1,19 @@
 {% extends "layout.html" %}
 {% block body %}
+
+<!--<script>
+function timedRefresh(timeoutPeriod) {
+	setTimeout("location.reload(true);",timeoutPeriod);
+}
+
+window.onload = timedRefresh(120000);
+</script>-->
+<button type="button" class="btn btn-default" onClick="window.location.reload(true)">Refresh Cards</button>
+
+
 <div class="card-deck">
  {% for entry in entries%}  
-        <div class="card card-inverse card-warning mb-3 text-center" style="width: 20rem;">
+        <div class="card card-inverse card-warning mb-3 text-center" style="width: 20rem;margin-top:20px;">
             <div class="col-sm-6">
             <div class="card-block">
                 #{{entries.index(entry) + 1}}

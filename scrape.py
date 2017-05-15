@@ -20,12 +20,14 @@ keys = [
     'Prev.close',
     'LatestExDate']
 
+
 def nScrape():
+
     browser.get(url)
     soup = BeautifulSoup(browser.page_source, "html.parser")
     table_gainers = soup.find_all('table')
     rows_g = table_gainers[0].find_all('tr')[1:]
-    
+    print("thread running")
     
     for row in rows_g:
         cols = row.find_all('td')
