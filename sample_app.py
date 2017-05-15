@@ -31,7 +31,7 @@ entries = ['entry 0',
 
 
 # nScrape()
-BackgroundTask(60 , nScrape, bus = cherrypy.engine).start()
+BackgroundTask(300 , nScrape, bus = cherrypy.engine).start()
 
 class HomePage:   
     @cherrypy.expose
